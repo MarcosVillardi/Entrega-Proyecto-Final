@@ -4,7 +4,7 @@ class Cliente(models.Model):
     usuario_cliente = models.CharField(max_length=50)
     edad = models.PositiveSmallIntegerField()
     email = models.EmailField()
-    numero_telefono = models.PositiveIntegerField()
+    numero_telefono = models.PositiveIntegerField(null=True)
     def __str__(self):
         return self.usuario_cliente   
 class Reserva(models.Model):

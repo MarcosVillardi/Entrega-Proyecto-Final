@@ -1,4 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from . import forms
 
 def base(request):
     return render(request, 'home/base.html')
+
+def crear_cliente(request):
+    if request.method == 'POST':
+        form = forms.ClienteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home:base')
+    else:
+        form = forms.ClienteForm()
+        context = {'form': form}
+    return render(request, 'home/crear_cliente.html',context)
