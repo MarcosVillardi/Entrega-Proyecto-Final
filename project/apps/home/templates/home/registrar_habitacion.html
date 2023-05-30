@@ -1,11 +1,11 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-    <h1 style="text-align:right; font-size: 30px; color: darkgoldenrod; text-decoration: underline; background-color: aqua;">Cliente</h1>
-    <form style="text-align:right" action="" method="post">
+    <h1 style="text-align:center; font-size: 30px; color: darkgoldenrod; text-decoration: underline; background-color: aqua;">Registrar Habitacion</h1>
+    <form style="text-align:center" action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Subir Cliente">
+        <input type="submit" value="Registrar Habitacion">
     </form>
     <p style="background-color: red;color: white;">para volver a la pagina principal complete el formulario o clickee <a href="{% url 'home:base' %}">AQUI</a></p>
         
