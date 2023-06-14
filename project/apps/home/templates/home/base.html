@@ -1,41 +1,36 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Azure Palace</title>
-</head>
-<body>
-    <h1 style="text-align: center; font-size: 50px; color: goldenrod;text-decoration: underline; background-color: aquamarine;">The Azure Palace</h1>
-    {% block content %}
-        <h2 style="font-size: 25px; text-decoration:underline;">UN POCO DE NOSOTROS</h2>
-        <p style="font-size: 15px; border: 1px solid black;" >The Azure Palace es un lujoso hotel ubicado en un entorno idílico, rodeado de exuberantes jardines y vistas panorámicas. Con su elegante arquitectura y una decoración interior de inspiración contemporánea, este hotel ofrece una experiencia de hospedaje excepcional.</p>
-        <h3 style="font-size: 20px; text-decoration:underline;">Servicios del establecimiento</h3>
-        <ul style="border: 1px solid black;">
-            <li>Estacionamiento con servicio de valet</li>
-            <li>Piscina</li>
-            <li>Bar/Salón</li>    
-            <li>Internet gratuito</li>   
-            <li>Gimnasio / Sala de entrenamiento</li>   
-        </ul>
-        <h3 style="font-size: 20px; text-decoration:underline;">Caracteristicas de la habitacion</h3>
-        <ul style="border: 1px solid black;">
-            <li>Aire acondicionado</li>
-            <li>Habitaciones interconectadas disponibles</li>
-            <li>Caja fuerte</li>
-            <li>Heladera</li>
-            <li>Servicio de limpieza</li>
-            <li>Servicio a la habitación</li>
-            <li>TV pantalla plana</li>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Blog Home - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'home/assets/favicon.ico' %}" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href=" {% static 'home/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        {% include 'home/navbar.html' %}
+        <!-- Page header with logo and tagline-->
+        <header class="py-5 bg-light border-bottom mb-4">
+            <div class="container">
+                <div class="text-center my-5">
+                    <h1 class="fw-bolder">Welcome to Blog Home!</h1>
+                    <p class="lead mb-0">A Bootstrap 5 starter layout for your next blog homepage</p>
+                </div>
+            </div>
+        </header>
+            {% block content %}           
+            {% endblock content %}
 
-        </ul>
-        <p style="font-size: 20px; "> si se quiere registrar su usuario ingrese a  <a href="crear_cliente">CLIENTE</a></p>
-        <p style="font-size: 20px; "> si se quiere registrar su habitacion ingrese a  <a href="registrar_habitacion">HABITACION</a></p>
-        <p style="font-size: 20px; "> si tiene auto y quiere registrar su garaje ingrese a  <a href="registrar_garaje">GAREJE</a></p>
-    
-       
-    {% endblock  %}
-
-</body>
+        {% include 'home/footer.html' %}
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'js/scripts.js' %}"></script>
+    </body>
 </html>

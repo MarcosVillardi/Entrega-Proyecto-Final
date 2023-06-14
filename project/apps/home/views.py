@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from . import forms
 
-def base(request):
-    return render(request, 'home/base.html')
+def index(request):
+    return render(request, 'home/index.html')
 
 def crear_cliente(request):
     if request.method == 'POST':
