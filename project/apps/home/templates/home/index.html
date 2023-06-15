@@ -1,6 +1,11 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
+
+{% if user.is_staff %}
+    {{ mensaje }}
+{% endif %}
+
 <!-- Page content-->
 <div class="container">
     <div class="row">
