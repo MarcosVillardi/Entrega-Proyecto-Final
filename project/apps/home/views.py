@@ -6,8 +6,11 @@ from django.contrib.admin.views.decorators import staff_member_required
 def index(request):
     return render(request, 'home/index.html')
 
-def info(request):
+def about(request):
     return render(request, 'home/about.html')
+
+def confirm(request):
+    return render(request, 'home/confirm.html')
 @staff_member_required
 def register_request(request):
       if request.method == 'POST':
