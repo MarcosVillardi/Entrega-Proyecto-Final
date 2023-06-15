@@ -8,6 +8,7 @@ urlpatterns = [
     path("about/", views.info, name='about'),   
     path('login/', views.login_request, name="login"),
     path('logout/', LogoutView.as_view(template_name='home/logout.html'), name="logout"),
+    path('register/', views.register_request, name="register"),
 
 ]
 urlpatterns += staticfiles_urlpatterns()

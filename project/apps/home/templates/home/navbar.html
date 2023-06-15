@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         {% if user.is_staff %}
-        <a class="navbar-brand btn btn-danger" href="{% url 'admin:index' %}"> staff </a> 
+        <a class="navbar-brand btn btn-outline-warning text-light" href="{% url 'admin:index' %}"> Staff </a> 
         {% endif %}
         {% if user.is_authenticated %}
             <p class="text-white mb-2 mb-lg-0"> Sesión iniciada con {{ user.username }} </p>
@@ -10,10 +10,17 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">                    
-                <li class="nav-item"><a class="nav-link" href="{% url 'home:index' %}">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'home:about' %}">Sobre mi</a></li>
-                <li class="nav-item"><a class="nav-link btn btn-success" aria-current="page" href="{% url 'home:login' %}">Inicio de sesion</a></li>
-                <li class="nav-item"><a class="nav-link btn btn-danger" href="{% url 'home:logout' %}">Salir de la sesion</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-outline-secondary text-light" href="{% url 'home:index' %}">Home</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-outline-info text-light" href="{% url 'home:about' %}">Sobre mi</a></li>
+                {% if user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link btn btn-outline-danger text-light" href="{% url 'home:logout' %}">Salir de la sesion</a></li>
+                {% else %}
+                <!-- si el usuario ya esta logeado que no aparezca iniciar sesion denuevo -->
+                <li class="nav-item"><a class="nav-link btn btn-outline-success text-light" aria-current="page" href="{% url 'home:login' %}">Iniciar sesion</a></li>
+                {% endif %}
+                {% if user.is_staff %}
+                <li class="nav-item"><a class="nav-link btn btn-outline-warning text-light" href="{% url 'home:register' %}">Crear Usuario</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>
